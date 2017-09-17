@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="~/js/main.js"></script>
+<script src="~/js/dieselController.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+
+<div id="dieselContainer" ng-app="MainApp" ng-controller="dieselController as ctrl"  >
+    <div id="actionContainer" style="margin-top:50px;" ng-if="ctrl.viewMode === 1">
+        <button class="btn-primary btn-lg btn-group" id="submitDetails" ng-click="ctrl.showSubmitForm()">Edit</button>
+        <button class="bg-primary btn-lg btn-group" style="margin-left:20px;" ng-click="ctrl.getReportData()">View Report</button>
+    </div>
+    
+    <div ng-if="ctrl.viewMode !== 1">
+        <button class="btn-primary btn-group" ng-click="ctrl.goBack()">Go Back</button>
+        <div id="dieselForm" class="container" ng-if="ctrl.viewMode === 2">
+            <h2>Daily generator diesel form</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Open stock:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" placeholder="Enter Open stock" ng-model="ctrl.openStock">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Received:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" placeholder="Enter received" ng-model="ctrl.received">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Used:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" placeholder="Enter Used" ng-model="ctrl.used">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-default" ng-click="ctrl.submit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="alert alert-success" role="alert" ng-if="ctrl.submitStatus === 1">
+                <strong>Well done!</strong> Submitted successfully.
+            </div>
+            <div class="alert alert-danger" role="alert" ng-if="ctrl.submitStatus === 2">
+                <strong>Oh snap!</strong> Error occurred submitting the form.
+            </div>
+        </div>
+        <div id="reportView" ng-if="ctrl.viewMode === 3">
+            <h2>This is reprot view</h2>
+
+            <table id="reportTable" class="display" cellspacing="0" width="100%" ng-if="ctrl.reportData.length>0">
+                <thead>
+                    <tr>
+                        <th>Open Stock</th>
+                        <th>Received</th>
+                        <th>Used</th>                        
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Open Stock</th>
+                        <th>Received</th>
+                        <th>Used</th>                        
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr ng-repeat="eachObt in ctrl.reportData">
+                        <td>{{eachObt.openStock}}</td>
+                        <td>{{eachObt.received}}</td>
+                        <td>{{eachObt.used}}</td>                        
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
