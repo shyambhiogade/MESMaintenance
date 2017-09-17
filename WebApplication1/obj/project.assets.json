@@ -7342,10 +7342,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\203107\\documents\\visual studio 2017\\Projects\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\203107\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\MESMaintenance\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\203107\\documents\\visual studio 2017\\Projects\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "outputPath": "C:\\Users\\203107\\documents\\visual studio 2017\\Projects\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\203107\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\MESMaintenance\\WebApplication1\\WebApplication1.csproj",
+      "outputPath": "C:\\Users\\203107\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\MESMaintenance\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "net452"

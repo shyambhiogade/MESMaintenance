@@ -8,6 +8,8 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+
+        //this is comment
         public IActionResult Index()
         {
             return View();
